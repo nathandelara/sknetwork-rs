@@ -77,20 +77,6 @@ fn sparse_t_matvec_into_nd(
     }
 }
 
-/// Computes sparse matvec.
-fn sparse_matvec(a: &CsMat<f64>, x: &Array1<f64>) -> Array1<f64> {
-    let mut out = Array1::<f64>::zeros(a.rows());
-    sparse_matvec_into_nd(a, x, &mut out, None);
-    out
-}
-
-/// Computes sparse t matvec.
-fn sparse_t_matvec(a: &CsMat<f64>, x: &Array1<f64>) -> Array1<f64> {
-    let mut out = Array1::<f64>::zeros(a.cols());
-    sparse_t_matvec_into_nd(a, x, &mut out, None, None);
-    out
-}
-
 fn apply_a_into(
     input: &SVDInput,
     x: &Array1<f64>,
@@ -610,7 +596,7 @@ fn svds_arpack(
             let mut scratch_row = Array1::<f64>::zeros(n_row);
             let mut scratch_col = Array1::<f64>::zeros(n_col);
             let transpose_eig = transpose;
-            let mut gram_matvec = move |x: &Array1<f64>, out: &mut Array1<f64>| {
+            let gram_matvec = move |x: &Array1<f64>, out: &mut Array1<f64>| {
                 cache_eig.gram_matvec_nd(
                     &a_owned,
                     transpose_eig,
@@ -660,7 +646,7 @@ fn svds_arpack(
             };
             let mut gram = GramMatvec::new(n_row, n_col, transpose);
             let input_ref = input;
-            let mut gram_matvec = move |x: &Array1<f64>, out: &mut Array1<f64>| {
+            let gram_matvec = move |x: &Array1<f64>, out: &mut Array1<f64>| {
                 gram.apply_into(input_ref, x, out);
             };
             let (_eigvals, eigvec) =
@@ -763,7 +749,6 @@ pub fn fit_partial_svd(
     random_state: Option<u64>,
 ) -> Result<PartialSvdResult, SVDError> {
     validate_svd_fit(&input, n_components)?;
-    let n_col = cols(&input);
     match kind {
         SvdSolverKind::Lanczos => {
             let mut solver = LanczosSVD::default().with_random_state(random_state);

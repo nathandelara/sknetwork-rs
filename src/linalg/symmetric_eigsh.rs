@@ -669,7 +669,6 @@ where
 #[derive(Clone)]
 struct RitzCandidate {
     index: usize,
-    value: f64,
     residual: f64,
 }
 
@@ -753,7 +752,7 @@ where
         } else {
             None
         };
-        let (m, mut alpha, mut beta) = lanczos_factorization(
+        let (m, alpha, beta) = lanczos_factorization(
             &mut profiled_matvec,
             n,
             ncv,
@@ -770,7 +769,6 @@ where
             prof.extend_us += t0.elapsed().as_micros() as u64;
         }
         if m == 0 {
-            compressed_keep = 0;
             break;
         }
 
@@ -814,7 +812,6 @@ where
                 };
                 RitzCandidate {
                     index: ridx,
-                    value: theta,
                     residual,
                 }
             })
