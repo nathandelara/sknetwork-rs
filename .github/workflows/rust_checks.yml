@@ -28,7 +28,7 @@ jobs:
         run: cargo doc --no-deps
 
       - name: Publish documentation gate
-        run: ./scripts/check_publish_docs.sh
+        run: bash scripts/check_publish_docs.sh
 
       - name: Publish package gate
-        run: ./scripts/check_publish_package.sh
+        run: bash scripts/check_publish_package.sh
