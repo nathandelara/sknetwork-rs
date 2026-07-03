@@ -9,27 +9,25 @@
 //!
 //! | Module | Algorithms |
 //! |--------|------------|
-//! | [`classification`] | Label propagation, diffusion, NN classifiers |
-//! | [`clustering`] | Louvain, Leiden, propagation clustering |
-//! | [`data`] | Edge-list / CSV / GraphML parsers, Netset loader |
-//! | [`embedding`] | Spring, ForceAtlas, spectral, SVD, random projection |
-//! | [`gnn`] | GNN layers, activations, classifiers |
-//! | [`hierarchy`] | Paris, Louvain hierarchy |
-//! | [`linalg`] | Sparse eig/SVD solvers, normalizers, operators |
-//! | [`linkpred`] | Nearest-neighbor link prediction |
-//! | [`path`] | Shortest paths, BFS, distances |
-//! | [`ranking`] | PageRank, HITS, Katz, closeness, betweenness |
-//! | [`regression`] | Diffusion regression |
-//! | [`topology`] | Cliques, cores, cycles, triangles, structure |
-//! | [`utils`] | Input checking, formatting, value conversion |
-//! | [`visualization`] | SVG graph and dendrogram rendering |
+//! | [`classification`](crate::classification) | Label propagation, diffusion, NN classifiers |
+//! | [`clustering`](crate::clustering) | Louvain, Leiden, propagation clustering |
+//! | [`data`](crate::data) | Edge-list / CSV / GraphML parsers, Netset loader |
+//! | [`embedding`](crate::embedding) | Spring, ForceAtlas, spectral, SVD, random projection |
+//! | [`gnn`](crate::gnn) | GNN layers, activations, classifiers |
+//! | [`hierarchy`](crate::hierarchy) | Paris, Louvain hierarchy |
+//! | [`linalg`](crate::linalg) | Sparse eig/SVD solvers, normalizers, operators |
+//! | [`linkpred`](crate::linkpred) | Nearest-neighbor link prediction |
+//! | [`path`](crate::path) | Shortest paths, BFS, distances |
+//! | [`ranking`](crate::ranking) | PageRank, HITS, Katz, closeness, betweenness |
+//! | [`regression`](crate::regression) | Diffusion regression |
+//! | [`topology`](crate::topology) | Cliques, cores, cycles, triangles, structure |
+//! | [`utils`](crate::utils) | Input checking, formatting, value conversion |
+//! | [`visualization`](crate::visualization) | SVG graph and dendrogram rendering |
 //!
-//! # Agent and parity documentation
+//! # Further reading
 //!
-//! - Human README: repository `README.md`
-//! - AI agent guide: repository `AGENTS.md`
-//! - Python parity tracker: repository `PORTING_MEMO.md`
-//! - Pre-publish checklist: repository `sknetwork-rs/docs/PUBLISHING.md`
+//! - [Repository README](https://github.com/nathandelara/sknetwork-rs/blob/main/README.md)
+//! - [Upstream Python library](https://github.com/sknetwork-team/scikit-network)
 //!
 //! # Examples
 //!

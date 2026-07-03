@@ -1,6 +1,6 @@
 [package]
 name = "sknetwork-rs"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 rust-version = "1.88"
 description = "Rust port of scikit-network graph learning and network analysis primitives"
@@ -9,7 +9,7 @@ license = "BSD-3-Clause"
 authors = ["Scikit-network team"]
 repository = "https://github.com/nathandelara/sknetwork-rs"
 homepage = "https://github.com/nathandelara/sknetwork-rs"
-documentation = "https://docs.rs/sknetwork-rs"
+documentation = "https://docs.rs/sknetwork-rs/latest/sknetwork_rs/"
 keywords = ["graph", "network", "sparse", "clustering", "pagerank"]
 categories = ["science", "algorithms"]
 include = [
